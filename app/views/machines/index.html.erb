@@ -1,2 +1,7 @@
 <h1>Machines#index</h1>
 <p>Find me in app/views/machines/index.html.erb</p>
+<div class="container">
+<%@machines.each do |machine|%>
+<p><%=machine.brand%></p>
+<%end%>
+</div>
