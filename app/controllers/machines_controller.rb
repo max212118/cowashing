@@ -1,6 +1,9 @@
 class MachinesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    # a supp
+    @user = current_user
     @machines = Machine.all
   end
 
@@ -13,15 +16,35 @@ class MachinesController < ApplicationController
   end
 
   def create
-    @machine =Machine.new(machine_params)
-    @machine.save
-    redirect_to machines_path
+    @machine = Machine.new(machine_params)
+    @machine.user = current_user
+    if @machine.save
+      redirect_to machines_path
+    else 
+      render :new
+    end
   end
 
   def edit
+    @machine = Machine.find(params[:id])
+  end
+
+  def update
+    @machine = Machine.find(params[:id])
+    @machine.update(machine_params)
+    @machine.user = current_user
+    if @machine.save
+      redirect_to machines_path
+    else 
+      render :update
+    end
+
   end
 
   def destroy
+    @machine = Machine.find(params[:id])
+    @machine.destroy
+    redirect_to machines_path
   end
 
   private
