@@ -1,8 +1,20 @@
 
 <div id="backimage" style="background-image: url('<%= image_path "washing.jpg" %>');">
 <h1 id="title-homepage">Co-Washing</h1>
-<%= link_to"See all offers", machines_path, id: "offers", class: "btn btn-success" %>
-<%= link_to user_session_path, id: "signin" do %>
-  <i class="fas fa-user"></i>
-<% end %>
+<%= link_to "See all offers", machines_path, id: "offers", class: "purple-round-btn" %>
+<div id="signin">
+  <% if current_user %>
+      <%= link_to destroy_user_session_path, id: "signout", method: :delete do %>
+        <i class="fas fa-door-open"></i>
+      <% end %>
+      <%= link_to "#" do %>
+        <i class="fas fa-user"></i>
+      <% end %>
+    <% else %>
+      <%= link_to user_session_path do %>
+        <i class="fas fa-user"></i>
+      <% end %>
+  <% end %>
+
+</div>
 </div>
