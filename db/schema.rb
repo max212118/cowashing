@@ -10,10 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_21_140043) do
+ActiveRecord::Schema.define(version: 2022_02_23_093610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointements", force: :cascade do |t|
+    t.datetime "begining_hour"
+    t.boolean "done"
+    t.bigint "user_id"
+    t.bigint "machine_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["machine_id"], name: "index_appointements_on_machine_id"
+    t.index ["user_id"], name: "index_appointements_on_user_id"
+  end
+
+  create_table "machines", force: :cascade do |t|
+    t.string "brand"
+    t.integer "capacity"
+    t.string "location"
+    t.integer "price"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.index ["user_id"], name: "index_machines_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "comment"
+    t.bigint "appointement_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["appointement_id"], name: "index_reviews_on_appointement_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +56,16 @@ ActiveRecord::Schema.define(version: 2022_02_21_140043) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "nickname"
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "appointements", "machines"
+  add_foreign_key "appointements", "users"
+  add_foreign_key "machines", "users"
+  add_foreign_key "reviews", "appointements"
 end
