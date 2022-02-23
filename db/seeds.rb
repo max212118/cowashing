@@ -14,7 +14,14 @@ puts "appointment created"
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Character.create(name: 'Luke', movie: movies.first)
 =======
 #   Character.create(name: 'Luke', movie: movies.first)
 >>>>>>> master
+=======
+
+#   Character.create(name: 'Luke', movie: movies.first)
+
+
+>>>>>>> edea0d473ecf3f0fb9bc2b2bb45a878d19a58d3c
