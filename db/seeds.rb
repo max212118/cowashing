@@ -19,7 +19,7 @@ User.destroy_all
 
 
 p 'creating users'
-user_test = User.create(email:'maxence.trnd@gmail.com', password: '123456', first_name: "Maxence")
+user_test = User.create(email:'maxence.trnd@gmail.com', password: '123456max', first_name: "Maxence")
 
 p 'creating machines'
 samsung = Machine.create(brand: "Samsung", user: user_test)
