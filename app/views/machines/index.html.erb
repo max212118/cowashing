@@ -11,7 +11,7 @@
 						<div class="card-body">
 							<h5 class="card-title">Post by <%= machine.user.email%></h5>
 							<p class="card-text">Ma machine est une <%=machine.brand %> et elle est située au <%= machine.location %></p>
-							<%=link_to machine.brand, machine_path(machine), class: "btn btn-primary" %>
+							<%=link_to machine.brand, machine_path(machine), class: "purple-round-btn" ,id: "button-index-to-show" %>
 						</div>
 					</div>
 				<% end %>
