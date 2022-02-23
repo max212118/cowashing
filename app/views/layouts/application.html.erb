@@ -12,7 +12,6 @@
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-
   <body>
     <%= yield %>
     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
