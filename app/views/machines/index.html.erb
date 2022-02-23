@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+	<p> Salut <%= @user.first_name %></p>
+<% end %>
+<div class="container">
+	<% @machines.each do |machine| %>
+		<p><%= link_to machine.brand, machine_path(machine) %></p>
+	<% end %>
+	<p><%= link_to "Post an offer", new_machine_path%></p>
+</div>
