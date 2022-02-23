@@ -1,7 +1,9 @@
-<div class="container">
-	<%= simple_form_for [ @machine, @appointement ] do |f| %>
-		<%= f.input :begining_hour%>
-		<%= f.input :done%>
-		<%= f.button :submit, "envoyer", class: "hdhd" %>
-	<% end %>
+<div class="form-div" style="background-image: url(<%= image_path("backgroundform.jpg")%>">
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+    <%= simple_form_for [ @machine, @appointement ] do |f| %>
+      <%= f.input :begining_hour, label: 'Choose a slots', error: 'please choose a slots to get your appointement'%>
+      <% f.input :done %>
+      <%= f.button :submit, "Prendre rendez vous", class: "form-btn"%>
+    <% end %>
+  </div>
 </div>

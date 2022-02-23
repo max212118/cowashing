@@ -13,9 +13,13 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <%#= link_to "Sign out", destroy_user_session_path, method: :delete %>
   </body>
 </html>
