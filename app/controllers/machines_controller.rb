@@ -2,10 +2,19 @@ class MachinesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    # a supp
     @user = current_user
-    @machines = Machine.all
+    @machines = Machine.geocoded
+
+    @markers = @machines.map do |machine|
+      {
+        lat: machine.latitude,
+        lng: machine.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { machine: machine }),
+        image_url: helpers.asset_url("smart-washing-machine.png")
+      }
+    end
   end
+
 
   def show
     @machine = Machine.find(params[:id])

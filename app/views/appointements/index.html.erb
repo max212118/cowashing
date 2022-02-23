@@ -1,6 +1,7 @@
 <div class="container">
 	<% @appointements.each do |appointement| %>
 		<p><%="#{appointement.begining_hour}, #{appointement.user.first_name}"%></p>
+        <p><%=link_to "Cancel my appointement", machine_appointement_path(appointement.machine, appointement), method: "delete"%></p>
 	<% end %>
 	<p><%= link_to "Post an offer", new_machine_path%></p>
 </div>
