@@ -1,5 +1,36 @@
+<html>
+<head>
+</head>
+
+<body>
+<div class="container-main">
+  <div class= "card-product">
+    <%= image_tag "img_one.jpg" %>
+    <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+    </div>
+  </div>
+  <div class= "card-product">
+    <%= image_tag "img_two.jpg" %>
+    <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+    </div>
+  </div>
+  <div class= "card-product">
+    <%= image_tag "img_three.jpg" %>
+    <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+    </div>
+  </div>
+</div>
+
 <div class="container">
 <p><%= "#{@machine.brand}, #{@machine.capacity}, #{@machine.location}"%></p>
-<p><%=link_to "Delete the machine", machine_path(@machine), method: :delete%></p>
-<p><%= link_to "Book this machine", new_machine_appointement_path(@machine) %></p>
+<p><% link_to "Delete the machine", machine_path(@machine), method: :delete %></p>
+<p><%= link_to "Rent", new_machine_appointement_path(@machine) %></p>
 </div>
+</body>
+</html>
