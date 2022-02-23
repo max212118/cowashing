@@ -5,6 +5,12 @@ class MachinesController < ApplicationController
     # a supp
     @user = current_user
     @machines = Machine.all
+    @markers = @machines.geocoded.map do |machine|
+      {
+        lat: machine.latitude,
+        lng: machine.longitude
+      }
+    end
   end
 
   def show

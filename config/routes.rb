@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   resources :reviews, only: [:destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :machines do
-    resources :appointements, only: [:new, :create]
+    resources :appointements, only: [:new, :create, :index, :destroy]
   end
-
-  resources :appointements, only:[:index, :create, :new]
 end

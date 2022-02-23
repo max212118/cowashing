@@ -21,6 +21,14 @@ class AppointementsController < ApplicationController
     @appointements = Appointement.all
   end
 
+  def destroy
+    @appointement = Appointement.find(params[:id])
+    if @appointement.destroy
+      redirect_to appointements_path
+    end
+
+  end
+
   private
 
   def appointement_params
