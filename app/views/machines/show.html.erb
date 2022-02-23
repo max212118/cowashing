@@ -1,6 +1,5 @@
-<h1>Machines#show</h1>
-<p>Find me in app/views/machines/show.html.erb</p>
 <div class="container">
 <p><%= "#{@machine.brand}, #{@machine.capacity}, #{@machine.location}"%></p>
 <p><%=link_to "Delete the machine", machine_path(@machine), method: :delete%></p>
+<p><%= link_to "Book this machine", new_machine_appointement_path(@machine) %></p>
 </div>
