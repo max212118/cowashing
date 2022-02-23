@@ -8,14 +8,19 @@ class ReviewsController < ApplicationController
     @appointement = Appointement.find(params[:appointement_id])
     @review = Review.new(review_params)
     @review.appointement = @appointement
-    @review.save
-    redirect_to :root
+    # @review.appointement = current_user
+    if @review.save
+      redirect_to machines_path
+    else
+      render :new
+    end
   end
 
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
     redirect_to :root
+    redirect_to machines_path
   end
 
   private
