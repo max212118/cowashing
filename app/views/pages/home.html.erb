@@ -1,4 +1,8 @@
 
-<h1 class="title-homepage">Co-Working</h1>
-<div id="backimage" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "washing.jpg" %>');">
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="backimage" style="background-image: url('<%= image_path "washing.jpg" %>');">
+<h1 id="title-homepage">Co-Washing</h1>
+<%= link_to"See all offers", machines_path, id: "offers", class: "btn btn-success" %>
+<%= link_to user_session_path, id: "signin" do %>
+  <i class="fas fa-user"></i>
+<% end %>
+</div>
