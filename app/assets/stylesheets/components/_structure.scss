@@ -1,3 +1,26 @@
+
 .margin-machines-index {
     margin-top: 20px;
+}
+
+@import url('link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+#backimage {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 100vh;
+}
+
+#title-homepage {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 500;
+  font-size: 100px;
+  margin-left: 50px;
+  padding: 80px;
+}
+
+#offers {
+  margin-left: 80px;
 }
