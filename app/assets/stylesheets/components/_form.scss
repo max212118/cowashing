@@ -1,15 +1,19 @@
 .form-btn {
-  border-color: #dddddd;
-  margin-bottom: 0;
-  margin-right: 22px;
-  text-transform: uppercase;
-  margin-top: 0;
-  background: #ABDDDE;
-  border: 2px solid #9CA6FF;
-  box-sizing: border-box;
-  border-radius: 20px;
-  color: beige;
-  font-weight: bold;
+  border-color: #dddddd !important;
+  margin-bottom: 0 !important;
+  margin-right: 22px !important;
+  text-transform: uppercase !important;
+  margin-top: 0 !important;
+  background: #ABDDDE !important;
+  border: 2px solid #9CA6FF !important;
+  box-sizing: border-box !important;
+  border-radius: 20px !important;
+  color: beige !important;
+  font-weight: bold !important;
+}
+.form-btn:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: #9CA6FF;
 }
 .form-div {
   min-height: 100vh;
