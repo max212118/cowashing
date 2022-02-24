@@ -11,7 +11,7 @@ class AppointementsController < ApplicationController
     @appointement.machine = @machine
     @appointement.user = current_user
     if @appointement.save
-      redirect_to machines_path
+      redirect_to appointements_path
     else
       render :new
     end
@@ -19,7 +19,6 @@ class AppointementsController < ApplicationController
 
   def index
     @appointements = Appointement.all
-    redirect_to machines_path
   end
 
   def destroy
