@@ -1,5 +1,5 @@
 class AppointementsController < ApplicationController
-  
+
   def new
     @machine = Machine.find(params[:machine_id])
     @appointement = Appointement.new
@@ -11,7 +11,7 @@ class AppointementsController < ApplicationController
     @appointement.machine = @machine
     @appointement.user = current_user
     if @appointement.save
-      redirect_to appointements_path
+      redirect_to machines_path
     else
       render :new
     end
@@ -19,6 +19,7 @@ class AppointementsController < ApplicationController
 
   def index
     @appointements = Appointement.all
+    redirect_to machines_path
   end
 
   def destroy
@@ -26,7 +27,6 @@ class AppointementsController < ApplicationController
     if @appointement.destroy
       redirect_to appointements_path
     end
-
   end
 
   private
