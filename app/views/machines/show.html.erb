@@ -2,7 +2,11 @@
     <div class="container-main">
       <div class="flex-container">
         <div class= "card-product">
+        <% if @machine.machine_picture %>
+          <%= image_tag @machine.machine_picture %>
+        <% else %>
           <%= image_tag "img_one.jpg" %>
+        <% end %>
           <div class="card-product-infos">
             <h2> <%= "#{@machine.brand}"%> </h2>
             <p><%= "#{@machine.capacity}L"%></p>
