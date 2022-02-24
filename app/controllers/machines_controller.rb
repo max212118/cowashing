@@ -29,7 +29,7 @@ class MachinesController < ApplicationController
     @machine.user = current_user
     if @machine.save
       redirect_to machines_path
-    else 
+    else
       render :new
     end
   end
@@ -44,10 +44,9 @@ class MachinesController < ApplicationController
     @machine.user = current_user
     if @machine.save
       redirect_to machines_path
-    else 
+    else
       render :update
     end
-
   end
 
   def destroy
@@ -57,7 +56,7 @@ class MachinesController < ApplicationController
   end
 
   private
-  
+
   def machine_params
     params.require(:machine).permit(:brand, :capacity, :location, :price)
   end
