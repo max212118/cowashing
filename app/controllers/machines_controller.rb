@@ -18,6 +18,7 @@ class MachinesController < ApplicationController
   def show
     @machine = Machine.find(params[:id])
     @reviews = @machine.reviews
+    @appointement = Appointement.new
   end
 
   def new

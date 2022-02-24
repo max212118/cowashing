@@ -7,7 +7,7 @@
 						<img src="https://blog.but.fr/wp-content/uploads/2020/03/01-lave-linge-blanc.jpg" class="card-img-top" alt="">
 						<div class="card-body">
 							<h5 class="card-title">Post by <%= machine.user.email%></h5>
-							<p class="card-text">Ma machine est une <%=machine.brand %> et elle est située au <%= machine.location %></p>
+							<p class="card-text">My machine is a <%=machine.brand %> and i'm located in <%= machine.location %></p>
 							<%=link_to machine.brand, machine_path(machine), class: "purple-round-btn" ,id: "button-index-to-show" %>
 						</div>
 					</div>
