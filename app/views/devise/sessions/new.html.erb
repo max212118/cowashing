@@ -1,47 +1,5 @@
 <div id="backimage" style="background-image: url('<%= image_path "washing.jpg" %>');">
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-          <div class="nav-item active">
-            <%= link_to root_path, id: "homenav" do %>
-              <i class="fas fa-home"></i>
-              <% end %>
-          </div>
-            <li id="signinnav">
-          <% if current_user %>
-              <%= link_to destroy_user_session_path, id: "signoutnav", method: :delete do %>
-                <i class="fas fa-door-open"></i>
-              <% end %>
-              <%= link_to "#" do %>
-                <i class="fas fa-user"></i>
-              <% end %>
-            <% else %>
-              <%= link_to user_session_path do %>
-                <i class="fas fa-user"></i>
-              <% end %>
-          <% end %>
-        </li>
-          <li class="nav-item dropdown">
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-            </div>
-          </li>
-          <!--li class="nav-item"-->
-          <!--/li-->
-      </ul>
-    </div>
-  </div>
-</div>
-
 <h2 id="logintitle">Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
