@@ -11,7 +11,7 @@ class AppointementsController < ApplicationController
     @appointement.machine = @machine
     @appointement.user = current_user
     if @appointement.save
-      redirect_to machines_path
+      redirect_to appointements_path
     else
       render :new
     end
