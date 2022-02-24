@@ -1,0 +1,8 @@
+<div id="appointement" class="border">
+  <%= simple_form_for [ machine, appointement ] do |f| %>
+    <%= f.input :begining_hour, as: :date, label: 'Choose a date', error: 'please choose a slots to get your appointement', html5: true %>
+    <%= f.input :begining_hour, as: :time, label: 'Choose a hour', error: 'please choose a slots to get your appointement', html5: true %>
+    <% f.input :done %>
+    <%= f.button :submit, "Take an appointment", id: "btnform", class: "form-btn"%>
+  <% end %>
+</div>
