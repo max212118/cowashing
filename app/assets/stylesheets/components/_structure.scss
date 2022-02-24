@@ -25,6 +25,23 @@
   margin-left: 80px;
 }
 
+.new-machine {
+    width: 55vh;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: lightgray 0px 6px 16px;
+    background-color: blanchedalmond;
+}
+
+.brand-and-capacity {
+  justify-content: space-between;
+}
+
+.added-margin {
+  position: relative;
+}
+=======
 #mainimg {
   margin-top: 50px;
   width: 600px;
