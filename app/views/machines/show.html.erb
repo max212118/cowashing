@@ -1,4 +1,12 @@
 
+<<<<<<< HEAD
+<%# <img src="../images/img_one.jpg" class="img-thumbnail" alt="..."> %>
+<%= image_tag asset_path("img_one.jpg"), id: "mainimg", class: "img-thumbnail" %>
+<%= image_tag asset_path("img_two.jpg"), id: "secondimg", class: "img-thumbnail" %>
+<%= image_tag asset_path("img_three.jpg"), id: "thirdimg", class: "img-thumbnail" %>
+
+<%= render"appointements/new", machine: @machine, appointement: @appointement %>
+=======
     <div class="container-main">
       <div class="flex-container">
         <div class= "card-product">
@@ -41,3 +49,4 @@
 <p> <%= review.rating %> </p>
 <p> <%= review.comment %> </p>
 <% end %>
+>>>>>>> master
