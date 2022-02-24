@@ -1,7 +1,52 @@
 
+<<<<<<< HEAD
 <%# <img src="../images/img_one.jpg" class="img-thumbnail" alt="..."> %>
 <%= image_tag asset_path("img_one.jpg"), id: "mainimg", class: "img-thumbnail" %>
 <%= image_tag asset_path("img_two.jpg"), id: "secondimg", class: "img-thumbnail" %>
 <%= image_tag asset_path("img_three.jpg"), id: "thirdimg", class: "img-thumbnail" %>
 
 <%= render"appointements/new", machine: @machine, appointement: @appointement %>
+=======
+    <div class="container-main">
+      <div class="flex-container">
+        <div class= "card-product">
+        <% if @machine.machine_picture %>
+          <%= image_tag @machine.machine_picture %>
+        <% else %>
+          <%= image_tag "img_one.jpg" %>
+        <% end %>
+          <div class="card-product-infos">
+            <h2> <%= "#{@machine.brand}"%> </h2>
+            <p><%= "#{@machine.capacity}L"%></p>
+            <p><%= "#{@machine.location}"%></p>
+          </div>
+        </div>
+      </div>
+       <div class="flex-container">
+        <div class="profile">
+          <%= image_tag "img_four.jpg" %>
+          <div class="card-infos">
+            <h1> Propriétaire </h1>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <h2> Profile </h2>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <h3> À propos </h3>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+      <div class="container">
+        <p> <% link_to "Delete the machine", machine_path(@machine), method: :delete %> </p>
+          <div class="blue-round-btn">
+             <%= link_to "Rent", new_machine_appointement_path(@machine) %>
+          </div>
+      </div>
+
+<% @reviews.each do |review| %>
+<p> <%= review.rating %> </p>
+<p> <%= review.comment %> </p>
+<% end %>
+>>>>>>> master

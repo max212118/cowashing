@@ -15,9 +15,9 @@ class MachinesController < ApplicationController
     end
   end
 
-
   def show
     @machine = Machine.find(params[:id])
+    @reviews = @machine.reviews
     @appointement = Appointement.new
   end
 
@@ -53,7 +53,7 @@ class MachinesController < ApplicationController
   def destroy
     @machine = Machine.find(params[:id])
     @machine.destroy
-    redirect_to machines_path
+    redirect_to appointement_path
   end
 
   private
