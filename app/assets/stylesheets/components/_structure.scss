@@ -6,6 +6,7 @@
 // homepage css
 
 @import url('link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('href="https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap');
 
 #backimage {
   background-size: cover;
@@ -89,4 +90,8 @@
 .show-flex {
   display: flex;
   justify-content: space-evenly;
+}
+
+.showtitles {
+  font-family: 'Roboto Serif', sans-serif;
 }
