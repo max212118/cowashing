@@ -1,6 +1,6 @@
 
 .margin-machines-index {
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 #backimage {
@@ -132,4 +132,39 @@
   position: absolute;
   margin-top: -400px;
   margin-left: 440px;
+}
+
+#indexpic {
+  position: absolute;
+  border-radius: 50%;
+  height: 45px;
+  width: 50px;
+  margin-left: -30px;
+  margin-top: -90px;
+  border: 3px solid white;
+}
+
+#postby {
+  padding-top: 10px;
+}
+
+#indexprice {
+  font-size: 18px;
+  margin-left: -15px;
+  margin-top: -1px;
+}
+
+#backimageindex {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 100%;
+}
+
+#stars {
+  position: absolute;
+  margin-left: 40px;
+  margin-top: -18px;
+  color: yellow;
 }
