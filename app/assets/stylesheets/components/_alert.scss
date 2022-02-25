@@ -20,3 +20,8 @@
 .flash-danger {
   border: 2px solid #FD1015;
 }
+
+.fa-times:before{
+  box-sizing: border-box;
+  content: "\f00d";
+}
