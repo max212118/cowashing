@@ -58,6 +58,6 @@ class MachinesController < ApplicationController
   private
 
   def machine_params
-    params.require(:machine).permit(:brand, :capacity, :location, :price, :machine_picture)
+    params.require(:machine).permit(:brand, :capacity, :location, :price, :machine_picture, :photo)
   end
 end

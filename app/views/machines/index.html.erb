@@ -7,13 +7,17 @@
 				<% @machines.each do |machine| %>
 					<%= link_to machine_path(machine), class: 'hover-card' do %>
 						<div class="card">
-							<img src="https://blog.but.fr/wp-content/uploads/2020/03/01-lave-linge-blanc.jpg" class="card-img-top" alt="">
+						    <% if machine.photo.attached? %>
+							<%= cl_image_tag machine.photo.key, class: "img-thumbnail indeximg" %>
+							<% else %>
+							<%= image_tag "img_one.jpg", class: "img-thumbnail indeximg" %>
+							<% end %>
 							<div class="card-body">
 								<h5 id= "postby" class="card-title">Post by <%= machine.user.first_name%></h5>
 								<% if machine.user.profile_picture %>
-								<%= image_tag machine.user.profile_picture, id: "indexpic" %>
+									<%= cl_image_tag machine.user.profile_picture.key, id: "profilshowpic", class: "avatar" %>
 								<% else %>
-								<%= image_tag image_path("avatar_img.jpg"), id: "indexpic" %>
+									<%= image_tag "avatar_img.jpg", id: "profilshowpic", class: "avatar" %>
 								<% end %>
 								<p class="card-text">My machine is a <%=machine.brand %> and i'm located in <%= machine.location %></p>
                 <p id= "indexprice"> <%= machine.price %>€</p>

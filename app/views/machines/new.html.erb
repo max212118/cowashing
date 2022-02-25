@@ -5,6 +5,7 @@
 		<div class="d-flex brand-and-capacity">
 			<%= f.input :brand, label: false, placeholder: "Your Brand" %>
 			<%= f.input :capacity, label: false, placeholder: "Capacity" %>
+			<%= f.input :photo, as: :file, label: false %>
 		</div>
 			<%= f.input :location,
 				input_html: { data: { geocoder_target: "location" }, class: "d-none" },

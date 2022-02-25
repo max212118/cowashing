@@ -2,8 +2,8 @@
     <div class="container-main">
       <div class="flex-container">
         <div class= "card-product">
-        <% if @machine.machine_picture %>
-          <%= image_tag @machine.machine_picture, id: "mainimg", class: "img-thumbnail"  %>
+        <% if @machine.photo.attached? %>
+          <%= cl_image_tag @machine.photo.key, id: "mainimg", class: "img-thumbnail"  %>
         <% else %>
           <%= image_tag "img_one.jpg", id: "mainimg", class: "img-thumbnail" %>
         <% end %>
@@ -38,10 +38,10 @@
     <p> • First Name : <%= @machine.user.first_name %></p>
     <p> • Last Name : <%= @machine.user.last_name %></p>
     <p> • Age : <%= @machine.user.age %> years old</p>
-    <% if @machine.user.profile_picture %>
-      <%= image_tag @machine.user.profile_picture, id: "profilshowpic" %>
+    <% if @machine.user.profile_picture.attached? %>
+      <%= cl_image_tag @machine.user.profile_picture.key, id: "profilshowpic", class: "avatar" %>
     <% else %>
-      <%= image_tag image_path("avatar_img.jpg"), id: "profilshowpic" %>
+      <%= image_tag "avatar_img.jpg", id: "profilshowpic" %>
     <% end %>
   </div>
 </div>
@@ -54,9 +54,9 @@
 
 <div id="showcomment">
    <% if review.user.profile_picture %>
-      <%= image_tag review.user.profile_picture, id: "commentshowpic" %>
+      <%= cl_image_tag review.user.profile_picture.key, id: "commentshowpic" %>
     <% else %>
-      <%= image_tag image_path("avatar_img.jpg"), id: "commentshowpic" %>
+      <%= image_tag "avatar_img.jpg", id: "commentshowpic" %>
     <% end %>
   <div>
     <p id="commentcontent"> <%= review.user.first_name %> <%= review.user.last_name %></p>
