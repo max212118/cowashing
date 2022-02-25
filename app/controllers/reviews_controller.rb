@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
 
     if @review.save
+      redirect_to machines_path, alert: "Review created!"
       redirect_to machine_path(@appointement.machine), alert: "review created!"
     else
       render :new
