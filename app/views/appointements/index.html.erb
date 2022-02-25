@@ -1,8 +1,18 @@
-<div class="container">
+<div class="card-appointement">
 	<% @appointements.each do |appointement| %>
-		<p><%="#{appointement.begining_hour}, #{appointement.user.first_name}"%></p>
-        <p><%=link_to "Cancel my appointement", machine_appointement_path(appointement.machine, appointement), method: "delete"%></p>
-        <p> <%=link_to "Review my appointment", new_appointement_review_path(appointement) %> </p>
+<div class="card-a-container">
+    <div class= "rdv-card">
+      <p><%="#{appointement.begining_hour}"%></p>
+      <p><%="#{appointement.user.first_name}" %></p>
+    </div>
+       <div>
+        <p><%=link_to "Cancel", machine_appointement_path(appointement.machine, appointement),class: "btn-appointements", method: "delete"%></p>
+        <p><%=link_to "Review", new_appointement_review_path(appointement),class: "btn-appointements" %></p>
+      </div>
+</div>
 	<% end %>
-  <p><%= link_to "Check out more washing machines near you", machines_path%></p>
+</div>
+
+<div class= "back-btn">
+<%= link_to "Back to Map", machines_path, class: "btn-appointements"%>
 </div>
