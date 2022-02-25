@@ -8,6 +8,11 @@
 							<img src="https://blog.but.fr/wp-content/uploads/2020/03/01-lave-linge-blanc.jpg" class="card-img-top" alt="">
 							<div class="card-body">
 								<h5 class="card-title">Post by <%= machine.user.first_name%></h5>
+								<% if machine.user.profile_picture %>
+								<%= image_tag machine.user.profile_picture, id: "profilshowpic" %>
+								<% else %>
+								<%= image_tag image_path("avatar_img.jpg"), id: "profilshowpic" %>
+								<% end %>
 								<p class="card-text">My machine is a <%=machine.brand %> and i'm located in <%= machine.location %></p>
 								<p class= "btn form-btn">Show</p>
 							</div>
