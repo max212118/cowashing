@@ -1,3 +1,5 @@
+<div id="backimageindex" style="background-image: url('<%= image_path "washing.jpg" %>');">
+
 <div class="container margin-machines-index">
 	<div class="row">
 		<div class="col-4">
@@ -11,17 +13,18 @@
 							<%= image_tag "img_one.jpg", class: "img-thumbnail indeximg" %>
 							<% end %>
 							<div class="card-body">
-								<h5 class="card-title">Post by <%= machine.user.first_name%></h5>
+								<h5 id= "postby" class="card-title">Post by <%= machine.user.first_name%></h5>
 								<% if machine.user.profile_picture %>
 									<%= cl_image_tag machine.user.profile_picture.key, id: "profilshowpic", class: "avatar" %>
 								<% else %>
-									<%= image_tag "avatar_img.jpg", id: "profilshowpic" %>
+									<%= image_tag "avatar_img.jpg", id: "profilshowpic", class: "avatar" %>
 								<% end %>
 								<p class="card-text">My machine is a <%=machine.brand %> and i'm located in <%= machine.location %></p>
+                <p id= "indexprice"> <%= machine.price %>€</p>
 								<p class= "btn form-btn">Show</p>
 							</div>
 						</div>
-					<% end %>	
+					<% end %>
 				<% end %>
 			</div>
 		</div>

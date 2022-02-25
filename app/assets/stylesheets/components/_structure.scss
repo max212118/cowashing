@@ -1,6 +1,6 @@
 
 .margin-machines-index {
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 // homepage css
@@ -106,4 +106,66 @@
   font-family: 'Roboto Serif', sans-serif;
 }
 
+#showcomment {
+  width: 60vw;
+  margin-left: 90px;
+  margin-top: 0px;
+  margin-bottom: 80px;
+  padding: 20px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
 
+#commentshowpic {
+  position: absolute;
+  border-radius: 50%;
+  height: 40px;
+  width: 45px;
+  margin-left: -9px;
+  margin-top: -5px;
+}
+
+#commentcontent {
+  margin-left: 40px;
+  font-weight: bold;
+}
+
+#deletebtn {
+  position: absolute;
+  margin-top: -400px;
+  margin-left: 440px;
+}
+
+#indexpic {
+  position: absolute;
+  border-radius: 50%;
+  height: 45px;
+  width: 50px;
+  margin-left: -30px;
+  margin-top: -90px;
+  border: 3px solid white;
+}
+
+#postby {
+  padding-top: 10px;
+}
+
+#indexprice {
+  font-size: 18px;
+  margin-left: -15px;
+  margin-top: -1px;
+}
+
+#backimageindex {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 100%;
+}
+
+#stars {
+  position: absolute;
+  margin-left: 40px;
+  margin-top: -18px;
+  color: yellow;
+}

@@ -51,7 +51,6 @@
 <% end %>
 
 <% @reviews.each do |review| %>
-<p> <%= review.rating %> </p>
 
 <div id="showcomment">
    <% if review.user.profile_picture %>
@@ -61,6 +60,11 @@
     <% end %>
   <div>
     <p id="commentcontent"> <%= review.user.first_name %> <%= review.user.last_name %></p>
+    <div id= "stars">
+     <% review.rating.times do %>
+     <i class="fas fa-star"></i>
+     <% end %>
+     </div>
     <p> <%= review.comment %> </p>
   </div>
 </div>
