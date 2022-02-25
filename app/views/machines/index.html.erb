@@ -8,7 +8,7 @@
 						<div class="card-body">
 							<h5 class="card-title">Post by <%= machine.user.email%></h5>
 							<p class="card-text">My machine is a <%=machine.brand %> and i'm located in <%= machine.location %></p>
-							<%=link_to machine.brand, machine_path(machine), class: "purple-round-btn" ,id: "button-index-to-show" %>
+							<%=link_to machine.brand, machine_path(machine), class: "btn form-btn" %>
 						</div>
 					</div>
 				<% end %>
@@ -21,7 +21,7 @@
 				data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 			</div>
 			  <div class= "container-add-an-offer">
-			    <p><%= link_to "Post an offer", new_machine_path,  class: "purple-round-btn", id: "add_an_offer"%></p>
+			    <p><%= link_to "Post an offer", new_machine_path,  class: "btn form-btn"%></p>
 			  </div>
 	    </div>
     </div>

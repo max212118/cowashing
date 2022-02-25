@@ -1,14 +1,27 @@
 
-<div class= "card-product">
-  <% if @machine.machine_picture %>
-    <%= image_tag @machine.machine_picture, id: "mainimg", class: "img-thumbnail"  %>
-  <% else %>
-    <%= image_tag "img_one.jpg", id: "mainimg", class: "img-thumbnail" %>
-  <% end %>
-      <div class="container container-show-machine">
-          <div>
-             <%= render"appointements/new", machine: @machine, appointement: @appointement %>
+    <div class="container-main">
+      <div class="flex-container">
+        <div class= "card-product">
+        <% if @machine.machine_picture %>
+          <%= image_tag @machine.machine_picture, id: "mainimg", class: "img-thumbnail"  %>
+        <% else %>
+          <%= image_tag "img_one.jpg", id: "mainimg", class: "img-thumbnail" %>
+        <% end %>
+
+        </div>
+        
+      </div>
+       <div class="flex-container">
+        <div class="profile">
+          <div class="card-infos">
           </div>
+        </div>
+      </div>
+
+    </div>
+
+      <div class="container">
+        <%= render"appointements/new", machine: @machine, appointement: @appointement %>
       </div>
 
 <div id="chara" class="border show-flex">

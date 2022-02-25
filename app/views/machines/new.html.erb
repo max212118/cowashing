@@ -1,15 +1,16 @@
 <div id="backimage" style="background-image: url('<%= image_path "washing.jpg" %>');">
-	<div class="container added-margin">
-		<%= simple_form_for [ @user, @machine], html: { class: "new-machine"}  do |f| %>
+	<div class="container added-margin pt-5">
+		<%= simple_form_for [ @user, @machine], html: { class: "new-machine m-auto"}  do |f| %>
+      <h1>Post Your Offer</h1>
 		<div class="d-flex brand-and-capacity">
-			<%= f.input :brand%>
-			<%= f.input :capacity%>
+			<%= f.input :brand, label: false, placeholder: "Your Brand" %>
+			<%= f.input :capacity, label: false, placeholder: "Capacity" %>
 		</div>
 			<%= f.input :location,
 				input_html: { data: { geocoder_target: "location" }, class: "d-none" },
 				wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
-			<%= f.input :price%>
-			<%= f.button :submit%>
+			<%= f.input :price, collection: 1..4, step: 0.5, placeholder: "$$$" %>
+			<%= f.button :submit, value: "Add", class: "form-btn" %>
 		<% end %>
 	</div>
 </div>
