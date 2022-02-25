@@ -17,6 +17,7 @@
           </div>
         </div>
       </div>
+
     </div>
 
       <div class="container">
@@ -25,24 +26,40 @@
 
 <div id="chara" class="border show-flex">
   <div>
-    
-    <h1>Characteristics</h1>
+    <h1 class="showtitles">Characteristics</h1>
     <p> • Brand : <%= @machine.brand %> </p>
     <p> • Capacity : <%= @machine.capacity %> </p>
     <p> • Location : <%= @machine.location %> </p>
     <p> • Price : <%= @machine.price %>€ </p>
   </div>
+
   <div>
-  <h1>Owner</h1>
-  <p> • First Name : <%= @machine.user.first_name %></p>
-  <p> • Last Name : <%= @machine.user.last_name %></p>
-  <p> • Age : <%= @machine.user.age %> years old</p>
-  <p><%= @machine.user.profile_picture %></p>
+    <h1 class="showtitles">Owner</h1>
+    <p> • First Name : <%= @machine.user.first_name %></p>
+    <p> • Last Name : <%= @machine.user.last_name %></p>
+    <p> • Age : <%= @machine.user.age %> years old</p>
+    <% if @machine.user.profile_picture %>
+      <%= image_tag @machine.user.profile_picture, id: "profilshowpic" %>
+    <% else %>
+      <%= image_tag image_path("avatar_img.jpg"), id: "profilshowpic" %>
+    <% end %>
   </div>
 </div>
 
+<%= link_to "Delete your offer", machine_path, method: :delete, class: ".purple-round-btn" %>
 
 <% @reviews.each do |review| %>
 <p> <%= review.rating %> </p>
-<p> <%= review.comment %> </p>
+
+<div id="showcomment">
+   <% if @machine.user.profile_picture %>
+      <%= image_tag @machine.user.profile_picture, id: "profilshowpic" %>
+    <% else %>
+      <%= image_tag image_path("avatar_img.jpg"), id: "commentshowpic" %>
+    <% end %>
+  <div>
+    <p id="commentcontent"> <%= @machine.user.first_name %> <%= @machine.user.last_name %></p>
+    <p> <%= review.comment %> </p>
+  </div>
+</div>
 <% end %>

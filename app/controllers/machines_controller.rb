@@ -53,7 +53,7 @@ class MachinesController < ApplicationController
   def destroy
     @machine = Machine.find(params[:id])
     @machine.destroy
-    redirect_to appointement_path
+    redirect_to machines_path
   end
 
   private
