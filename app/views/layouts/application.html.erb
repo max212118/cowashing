@@ -12,8 +12,21 @@
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
+  </head>
   <body>
     <%= render "shared/navbar" %>
+    <%# if notice %>
+      <%#p class="notice"><%#= notice %></p>
+    <%# end %>
+    <% if alert %>
+      <p class="alert flash flash-success alert alert-dismissible fade show" <%= role= "alert" %>>
+          <span> <%= alert %></span>
+      <a data-bs-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+     </a>
+    <% end %>
     <%= yield %>
+    <%#= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <%= render "shared/footer" %>
   </body>
 </html>
