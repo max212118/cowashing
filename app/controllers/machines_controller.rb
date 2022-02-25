@@ -29,7 +29,7 @@ class MachinesController < ApplicationController
     @machine = Machine.new(machine_params)
     @machine.user = current_user
     if @machine.save
-      redirect_to machines_path
+      redirect_to machines_path, alert: "washing machine created!"
     else
       render :new
     end
