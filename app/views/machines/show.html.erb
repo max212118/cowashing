@@ -9,8 +9,14 @@
     <%= render"appointements/new", machine: @machine, appointement: @appointement %>
   </div>
 
+      <div class="container container-show-machine">
+          <div>
+             <%= render"appointements/new", machine: @machine, appointement: @appointement %>
+          </div>
+      </div>
 <div id="chara" class="border show-flex">
   <div>
+    
     <h1 class="showtitles">Characteristics</h1>
     <p> •  <%= @machine.brand %> </p>
     <p> •  <%= @machine.capacity %> </p>
@@ -20,10 +26,25 @@
   <div>
   <h1 class="showtitles">Owner</h1>
   <p><%= @machine.user.email %></p>
+    <h1>Characteristics</h1>
+    <p> • Brand : <%= @machine.brand %> </p>
+    <p> • Capacity : <%= @machine.capacity %> </p>
+    <p> • Location : <%= @machine.location %> </p>
+    <p> • Price : <%= @machine.price %>€ </p>
+  </div>
+  <div>
+  <h1>Owner</h1>
+  <p> • First Name : <%= @machine.user.first_name %></p>
+  <p> • Last Name : <%= @machine.user.last_name %></p>
+  <p> • Age : <%= @machine.user.age %> years old</p>
+  <p><%= @machine.user.profile_picture %></p>
   </div>
 </div>
+
 
 <% @reviews.each do |review| %>
 <p> <%= review.rating %> </p>
 <p> <%= review.comment %> </p>
 <% end %>
+
+<#% link_to "Delete the machine", machine_path(@machine), method: :delete %>
