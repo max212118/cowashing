@@ -3,6 +3,8 @@
     margin-top: 20px;
 }
 
+// homepage css
+
 @import url('link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
 #backimage {
@@ -42,39 +44,55 @@
   position: relative;
 }
 
+
 #mainimg {
   margin-top: 50px;
-  width: 600px;
-  margin-left: 40px;
+  width: 900px;
+  margin-left: 90px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-
-#secondimg {
-  margin-top: -116px;
-  margin-left: 15px;
-  width: 350px;
-}
-
-
-#thirdimg {
-  margin-top: -150px;
-  width: 350px;
-  margin-left: 670px;
-}
-
 
 #appointement {
+  position: fixed;
   width: 25vw;
-  margin-left: 1100px;
-  margin-top: -500px;
+  margin-left: 1080px;
+  margin-top: -550px;
   padding: 30px;
-  background-color: #ede0d4;
-  border-radius: 12%;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 #btnform {
   margin-left: 50px;
 }
 
+<<<<<<< HEAD
 .container-show-machine {
   margin: 0 20px;
 }
+=======
+#chara {
+  width: 60vw;
+  margin-left: 90px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  padding: 20px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#charatitle {
+  font-size: 175%;
+  font-weight: bold;
+  text-align: center;
+}
+
+#apptitle {
+  font-size: 150%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.show-flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+>>>>>>> d913cd37163894e60d175abf5673f4ad07a63fac
