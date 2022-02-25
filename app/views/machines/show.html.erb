@@ -46,14 +46,16 @@
   </div>
 </div>
 
-<%= link_to "Delete your offer", machine_path, method: :delete, id: "deletebtn", class: "purple-round-btn" %>
+<% if @machine.user == current_user %>
+  <%= link_to "Delete your offer", machine_path, method: :delete, id: "deletebtn", class: "purple-round-btn" %>
+<% end %>
 
 <% @reviews.each do |review| %>
 <p> <%= review.rating %> </p>
 
 <div id="showcomment">
    <% if review.user.profile_picture %>
-      <%= image_tag review.user.profile_picture, id: "profilshowpic" %>
+      <%= image_tag review.user.profile_picture, id: "commentshowpic" %>
     <% else %>
       <%= image_tag image_path("avatar_img.jpg"), id: "commentshowpic" %>
     <% end %>

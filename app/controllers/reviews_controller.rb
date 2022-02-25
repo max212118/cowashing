@@ -8,9 +8,10 @@ class ReviewsController < ApplicationController
     @appointement = Appointement.find(params[:appointement_id])
     @review = Review.new(review_params)
     @review.appointement = @appointement
-    # @review.appointement = current_user
+    @review.user = current_user
+
     if @review.save
-      redirect_to machines_path, alert: "review created!"
+      redirect_to machine_path(@appointement.machine), alert: "review created!"
     else
       render :new
     end
