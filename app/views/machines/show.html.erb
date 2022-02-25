@@ -9,16 +9,23 @@
     <%= render"appointements/new", machine: @machine, appointement: @appointement %>
   </div>
 
-<<<<<<< HEAD
-
       <div class="container container-show-machine">
           <div>
              <%= render"appointements/new", machine: @machine, appointement: @appointement %>
           </div>
       </div>
-=======
 <div id="chara" class="border show-flex">
   <div>
+    
+    <h1 class="showtitles">Characteristics</h1>
+    <p> •  <%= @machine.brand %> </p>
+    <p> •  <%= @machine.capacity %> </p>
+    <p> •  <%= @machine.location %> </p>
+    <p> •  <%= @machine.price %> </p>
+  </div>
+  <div>
+  <h1 class="showtitles">Owner</h1>
+  <p><%= @machine.user.email %></p>
     <h1>Characteristics</h1>
     <p> • Brand : <%= @machine.brand %> </p>
     <p> • Capacity : <%= @machine.capacity %> </p>
@@ -33,7 +40,7 @@
   <p><%= @machine.user.profile_picture %></p>
   </div>
 </div>
->>>>>>> d913cd37163894e60d175abf5673f4ad07a63fac
+
 
 <% @reviews.each do |review| %>
 <p> <%= review.rating %> </p>
