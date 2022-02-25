@@ -20,14 +20,17 @@
 <div id="chara" class="border show-flex">
   <div>
     <h1>Characteristics</h1>
-    <p> •  <%= @machine.brand %> </p>
-    <p> •  <%= @machine.capacity %> </p>
-    <p> •  <%= @machine.location %> </p>
-    <p> •  <%= @machine.price %> </p>
+    <p> • Brand : <%= @machine.brand %> </p>
+    <p> • Capacity : <%= @machine.capacity %> </p>
+    <p> • Location : <%= @machine.location %> </p>
+    <p> • Price : <%= @machine.price %>€ </p>
   </div>
   <div>
   <h1>Owner</h1>
-  <p><%= @machine.user.email %></p>
+  <p> • First Name : <%= @machine.user.first_name %></p>
+  <p> • Last Name : <%= @machine.user.last_name %></p>
+  <p> • Age : <%= @machine.user.age %> years old</p>
+  <p><%= @machine.user.profile_picture %></p>
   </div>
 </div>
 >>>>>>> d913cd37163894e60d175abf5673f4ad07a63fac
