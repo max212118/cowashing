@@ -1,11 +1,15 @@
-<div class="container">
-	<%= simple_form_for [ @user, @machine ] do |f| %>
-		<%= f.input :brand%>
-		<%= f.input :capacity%>
-		  <%= f.input :location,
-              input_html: { data: { geocoder_target: "location" }, class: "d-none" },
-              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
-		<%= f.input :price%>
-		<%= f.button :submit%>
-	<% end %>
+<div id="backimage" style="background-image: url('<%= image_path "washing.jpg" %>');">
+	<div class="container added-margin">
+		<%= simple_form_for [ @user, @machine], html: { class: "new-machine"}  do |f| %>
+		<div class="d-flex brand-and-capacity">
+			<%= f.input :brand%>
+			<%= f.input :capacity%>
+		</div>
+			<%= f.input :location,
+				input_html: { data: { geocoder_target: "location" }, class: "d-none" },
+				wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+			<%= f.input :price%>
+			<%= f.button :submit%>
+		<% end %>
+	</div>
 </div>
