@@ -1,16 +1,30 @@
+<div id="backimageindex" style="background-image: url('<%= image_path "washing.jpg" %>');">
+
 <div class="container margin-machines-index">
 	<div class="row">
 		<div class="col-4">
 			<div class="horizontal-cards">
 				<% @machines.each do |machine| %>
-					<div class="card">
-						<img src="https://blog.but.fr/wp-content/uploads/2020/03/01-lave-linge-blanc.jpg" class="card-img-top" alt="">
-						<div class="card-body">
-							<h5 class="card-title">Post by <%= machine.user.email%></h5>
-							<p class="card-text">My machine is a <%=machine.brand %> and i'm located in <%= machine.location %></p>
-							<%=link_to machine.brand, machine_path(machine), class: "btn form-btn" %>
+					<%= link_to machine_path(machine), class: 'hover-card' do %>
+						<div class="card">
+						    <% if machine.photo.attached? %>
+							<%= cl_image_tag machine.photo.key, class: "img-thumbnail indeximg" %>
+							<% else %>
+							<%= image_tag "img_one.jpg", class: "img-thumbnail indeximg" %>
+							<% end %>
+							<div class="card-body">
+								<h5 id= "postby" class="card-title">Post by <%= machine.user.first_name%></h5>
+								<% if machine.user.profile_picture %>
+									<%= cl_image_tag machine.user.profile_picture.key, id: "profilshowpic", class: "avatar" %>
+								<% else %>
+									<%= image_tag "avatar_img.jpg", id: "profilshowpic", class: "avatar" %>
+								<% end %>
+								<p class="card-text">My machine is a <%=machine.brand %> and i'm located in <%= machine.location %></p>
+                <p id= "indexprice"> <%= machine.price %>€</p>
+								<p class= "btn form-btn">Show</p>
+							</div>
 						</div>
-					</div>
+					<% end %>
 				<% end %>
 			</div>
 		</div>

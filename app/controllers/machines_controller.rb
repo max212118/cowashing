@@ -4,7 +4,6 @@ class MachinesController < ApplicationController
   def index
     @user = current_user
     @machines = Machine.geocoded
-
     @markers = @machines.map do |machine|
       {
         lat: machine.latitude,
@@ -29,7 +28,7 @@ class MachinesController < ApplicationController
     @machine = Machine.new(machine_params)
     @machine.user = current_user
     if @machine.save
-      redirect_to machines_path
+      redirect_to machines_path, alert: "washing machine created!"
     else
       render :new
     end
@@ -59,6 +58,6 @@ class MachinesController < ApplicationController
   private
 
   def machine_params
-    params.require(:machine).permit(:brand, :capacity, :location, :price, :machine_picture)
+    params.require(:machine).permit(:brand, :capacity, :location, :price, :machine_picture, :photo)
   end
 end
