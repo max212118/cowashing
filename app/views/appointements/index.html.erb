@@ -4,6 +4,5 @@
         <p><%=link_to "Cancel my appointement", machine_appointement_path(appointement.machine, appointement), method: "delete"%></p>
         <p> <%=link_to "Review my appointment", new_appointement_review_path(appointement) %> </p>
 	<% end %>
-	<p><%= link_to "Post an offer", new_machine_path%></p>
   <p><%= link_to "Check out more washing machines near you", machines_path%></p>
 </div>
