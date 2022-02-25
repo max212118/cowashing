@@ -4,7 +4,6 @@ class MachinesController < ApplicationController
   def index
     @user = current_user
     @machines = Machine.geocoded
-
     @markers = @machines.map do |machine|
       {
         lat: machine.latitude,
