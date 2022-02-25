@@ -5,10 +5,6 @@
   <% else %>
     <%= image_tag "img_one.jpg", id: "mainimg", class: "img-thumbnail" %>
   <% end %>
-  <div class="abs_rel">
-    <%= render"appointements/new", machine: @machine, appointement: @appointement %>
-  </div>
-
       <div class="container container-show-machine">
           <div>
              <%= render"appointements/new", machine: @machine, appointement: @appointement %>
@@ -17,15 +13,6 @@
 <div id="chara" class="border show-flex">
   <div>
     
-    <h1 class="showtitles">Characteristics</h1>
-    <p> •  <%= @machine.brand %> </p>
-    <p> •  <%= @machine.capacity %> </p>
-    <p> •  <%= @machine.location %> </p>
-    <p> •  <%= @machine.price %> </p>
-  </div>
-  <div>
-  <h1 class="showtitles">Owner</h1>
-  <p><%= @machine.user.email %></p>
     <h1>Characteristics</h1>
     <p> • Brand : <%= @machine.brand %> </p>
     <p> • Capacity : <%= @machine.capacity %> </p>
@@ -46,5 +33,3 @@
 <p> <%= review.rating %> </p>
 <p> <%= review.comment %> </p>
 <% end %>
-
-<#% link_to "Delete the machine", machine_path(@machine), method: :delete %>
